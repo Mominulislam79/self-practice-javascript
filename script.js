@@ -231,3 +231,92 @@ profile.man_name();
 profile.man_age();
 profile.man_education();
 profile.man_university();
+
+class Dog_1 extends Animal{
+    // create constructor
+    constructor(name,breed){
+        super(name,'Dog_1');
+        this.breed=breed;
+    }
+    // overriding a method
+    speak(){
+        console.log(`The name of the dog is ${this.name}, it's breed is ${this.breed}`);
+    }
+}
+// create instance
+const myDog=new Dog_1("Tom","German Shepherd");
+myDog.speak();
+
+// Static method: they are called on class rather than on an object method
+class Mathhelper{
+    static add(x,y){
+        return x+y;
+    }
+    
+}
+// No method is created and the class is directly called on
+console.log(`The sum of the value x and y is ${Mathhelper.add(20,20)}`);
+
+class math_helper{
+    static multi(x,y){
+        return x*y;
+    }
+}
+console.log(`Multiplication of the value of x and y is ${math_helper.multi(10,20)}`);
+
+class mathe_helper{
+    static subtraction(x,y){
+        return x-y;
+    }
+}
+console.log(`The result of subtraction between the value of x and y is ${mathe_helper.subtraction(100,-300)}`);
+
+class new_div{
+    static divided(x,y){
+        return x/y;
+    }
+}
+console.log(`The result of divided the value of x by the value of y is ${new_div.divided(20,10)}`);
+
+class math_square{
+    static square(a){
+        return a*a;
+    }
+}
+console.log(`Square of the value of a is ${math_square.square(12)}`);
+
+class double{
+    static double_digit(a,b){
+        return (a+b)*(a+b);
+    }
+}
+console.log(`square of a plus b is ${double.double_digit(5,6)}`);
+
+class cube_three{
+    static cube(a,b){
+        return (a+b)*(a+b)*(a+b);
+    }
+}
+console.log(`cube of a plus b is ${cube_three.cube(2,3)}`);
+
+// Getters and Setters: Getters and setters allow you to define methods that get or set the value of an object’s property.
+
+class Circle{
+    // create constructor
+    constructor(radius){
+        this._radius=radius;
+        // _radius refers to private
+    }
+    get Diameter(){
+        return this._radius*2;
+    }
+    set radius(value){
+        if (value>0){
+            this._radius=value;
+        }
+    }
+}
+const myCircle=new Circle(5);
+console.log(myCircle.Diameter);
+myCircle.radius=10;
+console.log(myCircle.Diameter);
