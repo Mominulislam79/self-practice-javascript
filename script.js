@@ -448,3 +448,59 @@ class Annimal {
   myWhole.Village_name();
   myWhole.Population_number();
   myWhole.About_religeon();
+
+
+
+class Cars {
+    constructor(brand){
+        this.carname=brand;
+    }
+    present(){
+        return `I have a ${this.carname}`;
+    }
+}
+class Model extends Cars{
+    constructor(brand,mod){
+        super(brand);
+        this.model=mod;
+    }
+    show(){
+        return `${this.present()}, it is a ${this.model}`;
+    }
+}
+let myModel= new Model("Ford","Mustang");
+console.log(myModel.show());
+
+// An example of Employee and Manager Classes
+
+class Employee{
+    constructor(name,role,department){
+        this.name=name;
+        this.role=role;
+        this.department=department;
+        
+    }
+    work(){
+        // console.log(`Employee name is ${this.name} and he works in ${this.department} Department`);
+        return `Employee name is ${this.name} and he works in ${this.department} Department`
+    }
+    manage(){
+        // console.log(`His job role is to control ${this.role}`);
+        return `His job role is to control ${this.role}`
+    }
+}
+
+class manager extends Employee{
+    constructor(name,role,department,salary){
+        super(name,role,department);
+        this.salary=salary;
+    }
+    show(){
+        
+        return `Salary of this employee is ${this.salary} and this ${this.work()}. ${this.manage()}`;
+    }
+}
+
+let myManager=new manager("Samiul Islam", "HR Manger", "Human Resource", "$20000");
+console.log(myManager.show());
+
