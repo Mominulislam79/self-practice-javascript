@@ -320,3 +320,70 @@ const myCircle=new Circle(5);
 console.log(myCircle.Diameter);
 myCircle.radius=10;
 console.log(myCircle.Diameter);
+
+
+class Annimal {
+    constructor(name, species) {
+      this.name = name;
+      this.species = species;
+    }
+  
+    describe() {
+      console.log(`${this.name} is a ${this.species}`);
+    }
+  }
+  
+  class Dogg extends Annimal {
+    constructor(name, breed) {
+      super(name, 'Dogg'); // Calling the parent class constructor
+      this.breed = breed;
+    }
+  
+    describe() {
+      super.describe(); // Calling the parent class describe method
+      console.log(`${this.name} is a ${this.breed}`);
+    }
+  }
+
+  class vehicle{
+    constructor(make,model,year){
+        this.make=make;
+        this.model=model;
+        this.year=year;
+    }
+
+    start(){
+        console.log(`This car is manufactured in ${this.year} and it is made by ${this.make}`);
+    }
+    info(){
+        console.log(`Details of the car is given in it's manual, moreover, it's model is ${this.model}`);
+    }
+    details(){
+        console.log(`It's color is blue. Making year is ${this.year} and it has ${this.doors}`);
+    }
+  }
+
+  class Car extends vehicle{
+    constructor(make,model,year,doors){
+        super(make,model,year);
+        this.doors=doors;
+    }
+
+    start(){
+        super.start();
+        console.log(`This car has auto start on-off and this made in ${this.year}`);
+    }
+    info(){
+        super.info();
+        console.log(`Making year is ${this.year}, Model is ${this.model}, Number of doors is ${this.doors}, Manufacturer is ${this.make}`);
+    }
+    details(){
+        super.details();
+        console.log(`Please refer to ${this.model} manual`);
+    }
+  }
+  
+  const myCar=new Car('Toyota','BMW',2022,5);
+  myCar.start();
+  myCar.info();
+  myCar.details();
