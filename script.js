@@ -387,3 +387,64 @@ class Annimal {
   myCar.start();
   myCar.info();
   myCar.details();
+
+  class Netrokona{
+    constructor(District, Thana, Union, Village){
+        this.District=District;
+        this.Thana=Thana;
+        this.Union=Union;
+        this.Village=Village;
+    }
+    District_name(){
+        console.log(`District Name is: ${this.District}`);
+    }
+    Thana_name(){
+        console.log(`Number of total thana in ${this.District} is ${this.Thana}`);
+    }
+    Union_name(){
+        console.log(`Total number of union in ${this.District} is ${this.Union}`);
+
+    }
+    Village_name(){
+        console.log(`Total number of village in ${this.District} is ${this.Village}`);
+    }
+  }
+  class whole extends Netrokona{
+    constructor(District,Thana,Union,Village,Population,Religeon){
+        super(District,Thana,Union,Village);
+        this.Population=Population;
+        this.Religeon=Religeon;
+    }
+    District_name(){
+        super.District_name();
+        console.log(`Name of the district is ${this.District}`);
+    }
+    Thana_name(){
+        super.Thana_name();
+        console.log(`The number of thana is ${this.Thana}`);
+    }
+    Union_name(){
+        super.Union_name();
+        console.log(`Number of union in Netrokona is ${this.Union}`);
+    }
+    Village_name(){
+        super.Village_name();
+        console.log(`And name of our village is Rajibpur`);
+    }
+    Population_number(){
+        // super.Population_number();
+        console.log(`And the population of village is approximately 5000`);
+    }
+    About_religeon(){
+        // super.About_religeon();
+        console.log(`Moreover other religious people like christian, Buddhist live in our village peacefully`);
+    }
+  }
+
+  const myWhole=new whole("Netrokona",11,110,2000,"12 Million","Islam and Hindu");
+  myWhole.District_name();
+  myWhole.Thana_name();
+  myWhole.Union_name();
+  myWhole.Village_name();
+  myWhole.Population_number();
+  myWhole.About_religeon();
